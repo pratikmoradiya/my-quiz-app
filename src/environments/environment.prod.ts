@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  OPEN_API_URL: 'https://opentdb.com/'
 };
