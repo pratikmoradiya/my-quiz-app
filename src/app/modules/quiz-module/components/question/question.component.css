@@ -17,13 +17,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .btn-ans {
     padding: 5px;
     margin: 5px;
     cursor: pointer;
+}
+
+.btn-ans-hover:hover {
+    background-color: green;
 }
 
 .selected-ans-right {
