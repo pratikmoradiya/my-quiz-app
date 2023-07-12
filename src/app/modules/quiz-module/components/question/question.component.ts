@@ -38,17 +38,21 @@ export class QuestionComponent implements OnInit, OnChanges, AfterViewInit {
   }
   
   selectAnswer(i: number, ans: string) {
-    if(!this.questionList[i].user_answer) {
-      this.totalAnswerQuestion++;
-    }
-    this.questionList[i].user_answer =  ans;
-    if(this.questionList[i].correct_answer == this.questionList[i].user_answer ) {
-      this.totalCorrectAnswer.push(i);
-    } else {
-      const indexKey = this.totalCorrectAnswer.indexOf(i);
-      if (indexKey > -1) {
-         this.totalCorrectAnswer.splice(indexKey, 1); // Remove array element
-      }
+    
+    if(this.showAnswer == false) {
+        if(!this.questionList[i].user_answer) {
+          this.totalAnswerQuestion++;
+        }
+        this.questionList[i].user_answer =  ans;
+        if(this.questionList[i].correct_answer == this.questionList[i].user_answer ) {
+          this.totalCorrectAnswer.push(i);
+        } else {
+          const indexKey = this.totalCorrectAnswer.indexOf(i);
+          if (indexKey > -1) {
+            this.totalCorrectAnswer.splice(indexKey, 1); // Remove array element
+          }
+        }
+
     }
   }
 
